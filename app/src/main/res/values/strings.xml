@@ -2,4 +2,7 @@
     <string name="app_name">Lex Viagens</string>
     <string name="especiais">Especiais</string>
     <string name="brasil">Brasil</string>
+    <string name="sao_paulo">São Paulo</string>
+    <string name="mock_2_dias">2 dias</string>
+    <string name="mock_valor">R$ 243,99</string>
 </resources>
