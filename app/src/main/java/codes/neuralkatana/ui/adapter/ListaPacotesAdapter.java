@@ -1,12 +1,17 @@
 package codes.neuralkatana.ui.adapter;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
 
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 
 import codes.neuralkatana.R;
 import codes.neuralkatana.model.Pacote;
@@ -15,6 +20,7 @@ public class ListaPacotesAdapter extends BaseAdapter {
 
     private final List<Pacote> pacotes;
     private Context context;
+    private final Locale localidade = new Locale( "pt", "BR" );
 
     public ListaPacotesAdapter(List<Pacote> pacotes, Context context){
         this.pacotes = pacotes;
@@ -41,6 +47,20 @@ public class ListaPacotesAdapter extends BaseAdapter {
         View viewCriada = LayoutInflater
                 .from(context)
                 .inflate(R.layout.item_pacote, parent, false);
+        Pacote pacote = pacotes.get(posicao);
+        TextView local = viewCriada.findViewById(R.id.item_pacote_local);
+        ImageView imagem = viewCriada.findViewById(R.id.item_pacote_imagem);
+        TextView dias = viewCriada.findViewById(R.id.item_pacote_dias);
+        TextView preco = viewCriada.findViewById(R.id.item_pacote_preco);
+
+        //Pega o ID da Imagem
+        int idDaImagem = context.getResources()
+                .getIdentifier(pacote.getImagem(),"drawable",context.getPackageName());
+
+        local.setText(pacote.getLocal());
+        imagem.setImageResource(idDaImagem);
+        dias.setText(pacote.getDias()+" dias");
+        preco.setText(NumberFormat.getCurrencyInstance(localidade).format(pacote.getPreco()));
         return viewCriada;
     }
 }
