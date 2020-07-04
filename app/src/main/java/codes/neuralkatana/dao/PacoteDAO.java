@@ -7,8 +7,10 @@ import java.util.List;
 
 import codes.neuralkatana.model.Pacote;
 
+@SuppressWarnings("UnpredictableBigDecimalConstructorCall")
 public class PacoteDAO {
     //Dados Mockup
+    @SuppressWarnings("UnnecessaryLocalVariable")
     public List<Pacote> lista(){
         List<Pacote> pacotes = new ArrayList<>(Arrays.asList(
            new Pacote("São Paulo", "sao_paulo_sp", 2, new BigDecimal(243.99)),

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6E0263</color>
-    <color name="colorPrimaryDark">#6E0260</color>
-    <color name="colorAccent">#03DAC5</color>
-    <color name="pseudoPurple">#6E0263</color>
+<color name="colorPrimary">#7B1FA2</color>
+<color name="colorPrimaryDark">#4A0072</color>
+<color name="colorAccent">#AE52D4</color>
+<color name="pseudoPurple">#6E0263</color>
 </resources>
