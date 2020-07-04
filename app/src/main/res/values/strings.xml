@@ -6,4 +6,7 @@
     <string name="sao_paulo">São Paulo</string>
     <string name="mock_2_dias">2 dias</string>
     <string name="mock_valor">R$ 243,99</string>
+    <string name="todo">TODO</string>
+    <string name="banner">Banner Inicial para Aplicação</string>
+    <string name="imagem_da_localidade">Imagem da Localidade</string>
 </resources>
