@@ -9,4 +9,6 @@
     <string name="todo">TODO</string>
     <string name="banner">Banner Inicial para Aplicação</string>
     <string name="imagem_da_localidade">Imagem da Localidade</string>
+    <string name="preco_final">Preço Final:</string>
+    <string name="realizar_pagamento">Realizar Pagamento</string>
 </resources>

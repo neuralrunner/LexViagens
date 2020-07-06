@@ -21,7 +21,7 @@ public class ListaPacotesAdapter extends BaseAdapter {
 
     private final List<Pacote> pacotes;
     private final Context context;
-    private final Locale localidade = new Locale("pt", "BR");
+
 
     public ListaPacotesAdapter(List<Pacote> pacotes, Context context) {
         this.pacotes = pacotes;
@@ -65,7 +65,7 @@ public class ListaPacotesAdapter extends BaseAdapter {
         local.setText(pacote.getLocal());
         imagem.setImageResource(DrawableUtil.retornaImagemDrawable(context, pacote.getImagem()));
         dias.setText(DiasUtil.retornaDiasEmTexto(pacote.getDias()));
-        preco.setText(MoedaUtil.formataBigDecimalParaReal(pacote.getPreco(), localidade));
+        preco.setText(MoedaUtil.formataBigDecimalParaReal(pacote.getPreco(), MoedaUtil.BRASIL));
     }
 
 }
