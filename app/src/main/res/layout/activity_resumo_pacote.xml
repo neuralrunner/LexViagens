@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.activity.ResumoPacoteActivity">
+    android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/resumo_pacote_imagem"
@@ -46,7 +45,6 @@
         android:layout_marginTop="8dp"
         android:textSize="14sp"
         app:layout_constraintEnd_toStartOf="@+id/resumo_pacote_preco"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="@+id/resumo_pacote_dias"
         app:layout_constraintTop_toBottomOf="@+id/resumo_pacote_dias"
@@ -62,7 +60,7 @@
         android:layout_marginRight="8dp"
         android:textColor="@android:color/holo_green_dark"
         android:textSize="20sp"
-        android:textAlignment="viewEnd"
+        android:textAlignment="textEnd"
         android:gravity="end"
         app:layout_constraintBottom_toBottomOf="@+id/resumo_pacote_data"
         app:layout_constraintEnd_toEndOf="parent"
@@ -82,12 +80,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
         android:background="@drawable/botao_redondo_laranja"
         android:text="@string/realizar_pagamento"
         android:textColor="@android:color/white"
