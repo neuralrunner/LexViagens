@@ -11,7 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup">
-        <activity android:name=".ui.activity.ResumoPacoteActivity"></activity>
+        <activity android:name=".ui.activity.PagamentoActivity"></activity>
+        <activity android:name=".ui.activity.ResumoPacoteActivity" />
         <activity android:name=".ui.activity.ListaPacotesActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

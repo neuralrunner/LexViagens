@@ -2,6 +2,7 @@ package codes.neuralkatana.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -33,6 +34,9 @@ public class ResumoPacoteActivity extends AppCompatActivity {
         mostraDias(pacote);
         mostraPreco(pacote);
         mostraDataFormatada(pacote);
+
+        Intent intent = new Intent(this, PagamentoActivity.class);
+        startActivity(intent);
     }
 
     private void mostraDataFormatada(Pacote pacote) {

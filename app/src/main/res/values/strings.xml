@@ -11,4 +11,13 @@
     <string name="imagem_da_localidade">Imagem da Localidade</string>
     <string name="preco_final">Preço Final:</string>
     <string name="realizar_pagamento">Realizar Pagamento</string>
+    <string name="digite_informacoes">Digite as Informações do cartão de crédito que você deseja usar para o pagmento</string>
+    <string name="valor_da_compra">Valor da compra:</string>
+    <string name="numero_cartao">Número do Cartão</string>
+    <string name="cartao_aa">AA</string>
+    <string name="cartao_mm">MM</string>
+    <string name="cartao_cvc">CVC</string>
+    <string name="nome_no_cartao">Nome no Cartão</string>
+    <string name="finalizar_compra">Finalizar Compra</string>
+    <string name="restricao_nome">abcdefghijklmnopqrstuvwxyzç ABCDEFGHIJKLMNOPQRSTUVWXYZÇ</string>
 </resources>
