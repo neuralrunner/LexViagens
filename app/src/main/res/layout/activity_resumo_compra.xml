@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/final_image_banner_fixo"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@android:color/holo_orange_dark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/final_parabens_fixo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:text="@string/parabens"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/final_image_banner_fixo"
+        app:layout_constraintStart_toStartOf="@+id/final_image_banner_fixo"
+        app:layout_constraintTop_toTopOf="@+id/final_image_banner_fixo"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/final_compra_realizada_fixo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="@string/compra_sucesso"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="@+id/final_image_banner_fixo"
+        app:layout_constraintStart_toStartOf="@+id/final_image_banner_fixo"
+        app:layout_constraintTop_toBottomOf="@+id/final_parabens_fixo" />
+
+    <TextView
+        android:id="@+id/final_confira_compra_fixo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/confira_o_resumo_da_compra"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:layout_margin="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/final_image_banner_fixo"/>
+
+    <ImageView
+        android:id="@+id/final_image_local"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:scaleType="centerCrop"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/final_confira_compra_fixo"
+        tools:src="@drawable/sao_paulo_sp"/>
+
+    <TextView
+        android:id="@+id/final_texto_local"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/final_image_local"
+        tools:text="@string/sao_paulo"/>
+
+    <TextView
+        android:id="@+id/final_texto_data"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/final_texto_local"
+        app:layout_constraintTop_toBottomOf="@id/final_texto_local"
+        tools:text="08/12 - 10/12 de 2017"/>
+
+    <TextView
+        android:id="@+id/final_texto_preco"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@id/final_texto_data"
+        app:layout_constraintTop_toBottomOf="@id/final_texto_data"
+        tools:text="R$243,99"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
