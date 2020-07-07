@@ -5,37 +5,59 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.math.BigDecimal;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-
 import codes.neuralkatana.R;
 import codes.neuralkatana.model.Pacote;
-import codes.neuralkatana.ui.adapter.ListaPacotesAdapter;
 import codes.neuralkatana.util.DiasUtil;
 import codes.neuralkatana.util.DrawableUtil;
 import codes.neuralkatana.util.FormataDataUtil;
 import codes.neuralkatana.util.MoedaUtil;
 
+import static codes.neuralkatana.ui.activity.PacotesActivityConstantes.CHAVE_PACOTE;
+
 public class ResumoPacoteActivity extends AppCompatActivity {
+
+    private Pacote pacote;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resumo_pacote);
         setTitle("RESUMO DO PACOTE");
-        final Pacote pacote = new Pacote("São Paulo", "sao_paulo_sp", 2, new BigDecimal(243.99));
 
+        Intent intent = getIntent();
+
+        if (intent.hasExtra(CHAVE_PACOTE)) {
+            pacote = (Pacote) intent.getSerializableExtra(CHAVE_PACOTE);
+            inicializaCampos();
+        }
+    }
+
+    private void inicializaCampos() {
         mostraLocal(pacote);
         mostraImagem(pacote);
         mostraDias(pacote);
         mostraPreco(pacote);
         mostraDataFormatada(pacote);
+        realizaPagamentoBotao();
+    }
 
-        Intent intent = new Intent(this, PagamentoActivity.class);
+    private void realizaPagamentoBotao() {
+        Button realizarPagamento = findViewById(R.id.resumo_pacote_botao_realizar_pagamento);
+        realizarPagamento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                vaiParaPagamento();
+            }
+        });
+    }
+
+    private void vaiParaPagamento() {
+        Intent intent = new Intent(ResumoPacoteActivity.this, PagamentoActivity.class);
+        intent.putExtra(CHAVE_PACOTE, pacote);
         startActivity(intent);
     }
 
@@ -57,11 +79,13 @@ public class ResumoPacoteActivity extends AppCompatActivity {
 
     private void mostraImagem(Pacote pacote) {
         ImageView imagem = findViewById(R.id.resumo_pacote_imagem);
-        imagem.setImageResource(DrawableUtil.retornaImagemDrawable(this,pacote.getImagem()));
+        imagem.setImageResource(DrawableUtil.retornaImagemDrawable(this, pacote.getImagem()));
     }
 
     private void mostraLocal(Pacote pacote) {
         TextView local = findViewById(R.id.resumo_pacote_local);
         local.setText(pacote.getLocal());
     }
+
+
 }

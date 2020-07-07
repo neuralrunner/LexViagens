@@ -2,6 +2,7 @@ package codes.neuralkatana.ui.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -15,7 +16,11 @@ import codes.neuralkatana.util.DrawableUtil;
 import codes.neuralkatana.util.FormataDataUtil;
 import codes.neuralkatana.util.MoedaUtil;
 
+import static codes.neuralkatana.ui.activity.PacotesActivityConstantes.CHAVE_PACOTE;
+
 public class ResumoCompraActivity extends AppCompatActivity {
+
+    private Pacote pacote;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,12 +28,25 @@ public class ResumoCompraActivity extends AppCompatActivity {
         setContentView(R.layout.activity_resumo_compra);
         setTitle("RESUMO DA COMPRA");
 
-        final Pacote pacote = new Pacote("São Paulo", "sao_paulo_sp", 2, new BigDecimal(243.99));
+        Intent intent = getIntent();
 
+        if (intent.hasExtra(CHAVE_PACOTE)) {
+            pacote = (Pacote) intent.getSerializableExtra(CHAVE_PACOTE);
+            inicializaCampos();
+        }
+    }
+
+    private void inicializaCampos() {
         mostraImagem(pacote);
         mostraLocal(pacote);
         mostraDataFormatada(pacote);
         mostraPreco(pacote);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(ResumoCompraActivity.this, ListaPacotesActivity.class);
+        startActivity(intent);
     }
 
     private void mostraPreco(Pacote pacote) {
@@ -49,7 +67,7 @@ public class ResumoCompraActivity extends AppCompatActivity {
 
     private void mostraImagem(Pacote pacote) {
         ImageView imagem = findViewById(R.id.final_image_local);
-        imagem.setImageResource(DrawableUtil.retornaImagemDrawable(this,pacote.getImagem()));
+        imagem.setImageResource(DrawableUtil.retornaImagemDrawable(this, pacote.getImagem()));
     }
 
 
